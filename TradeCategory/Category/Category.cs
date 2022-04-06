@@ -5,6 +5,7 @@
         public static string CategoryName(ITrade trade, DateTime referenceDate)
         {
             List<ICategory> categories= new List<ICategory> {
+                new PEPCategory(trade),
                 new ExpiredCategory(trade, referenceDate),
                 new MediumRiskCategory(trade),
                 new HighRiskCategory(trade)
